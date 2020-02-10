@@ -7,7 +7,7 @@ const questions = [{
     type: 'input',
     name: 'username',
     message: "Please enter a github username: ",
-  }]
+  }];
 
 inquirer.prompt(questions).then(data => {
     const username = data.username;
@@ -43,24 +43,29 @@ class Profile {
 
 async function pdfer(profile) {
     const htmlString = `
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
     <style>
-    #profileImg {
-        border: 3px solid black;
-        border-radius: 30px;
-    }
-    .topPad {
-        padding-top: 50px;
-    }
-    .usrInfo {
-        color: green;
-    }
-    a {
-        color: black;
-    }
+        #profileImg {
+            border: 3px solid black;
+            border-radius: 30px;
+        }
+        .topPad {
+            padding-top: 50px;
+        }
+        .usrInfo {
+            color: green;
+        }
+        a {
+            color: black;
+        }
     </style>
+
     <div style='height: 50px;'></div>
+    
     <div class="container">
+        
         <div class="row">
             <div class="col green"></div>
             <div class="col-4">
@@ -68,51 +73,62 @@ async function pdfer(profile) {
             </div>
             <div class="col"></div>
         </div>
+
         <div class="row">
             <div class="col">
                 <h1 class="text-center">${profile.usrName}</h1>
             </div>
         </div>
+
         <div class="row">
             <div class="col">
                 <h3 class="text-center">${profile.blog}</h3>
             </div>
         </div>
-        <div style='height: 50px;'></div>
-        <div class="row">
 
+        <div style='height: 50px;'></div>
+        
+        <div class="row">
             <div class="col-6">
+
                 <div class="row">
                     <div class="col">
                         <h3 class="text-center usrInfo">Public Repos:</h3>
                         <h3 class="text-center">${profile.public_repos}</h3>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col">
                         <h3 class="text-center usrInfo">Location:</h3>
                         <a href='${profile.locationLink}'><h3 class="text-center">${profile.location}</h3></a>
                     </div>
                 </div>
+
             </div>
             
             <div class="col-6">
+
                 <div class="row">
                     <div class="col">
                         <h3 class="text-center usrInfo">Followers:</h3>
                         <h3 class="text-center">${profile.followers}</h3>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col">
                         <h3 class="text-center usrInfo">Following:</h3>
                         <h3 class="text-center">${profile.following}</h3>
                     </div>
-                </div>   
+                </div>
+
             </div>
 
         </div>
+
         <div style='height: 50px;'></div>
+        
         <div class="row">
             <div class="col">
                 <h3 class="text-center usrInfo">Biography:</h3>
